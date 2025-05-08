@@ -1,7 +1,8 @@
-package src.services.views;
+package backend.services.views;
 
 import java.util.Scanner;
-import src.services.controller.LoginController;
+
+import backend.services.controller.LoginController;
 
 public class LoginView {
 
