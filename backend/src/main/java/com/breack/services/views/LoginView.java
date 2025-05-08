@@ -1,8 +1,8 @@
-package backend.services.views;
+package com.breack.services.views;
 
 import java.util.Scanner;
 
-import backend.services.controller.LoginController;
+import com.breack.services.controller.LoginController;
 
 public class LoginView {
 

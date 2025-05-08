@@ -1,4 +1,4 @@
-package backend.services; // o el paquete que estés usando
+package com.breack.services; // o el paquete que estés usando
 
 import java.sql.Connection;
 import java.sql.DriverManager;

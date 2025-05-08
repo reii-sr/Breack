@@ -1,10 +1,12 @@
-package src.services.model;
+package com.breack.services.model;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.sql.*;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Usuario {
     private final String username;
@@ -41,9 +43,9 @@ public class Usuario {
         return false;
     }
 
-    // Método para hacer el hash de la contraseña con SHA2_256 (para validación)
+    // Método para hacer el hash de la contraseña con SHA-256
     @SuppressWarnings("CallToPrintStackTrace")
-    private String hashPassword(String password) {
+    public String hashPassword(String password) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             byte[] hashBytes = md.digest(password.getBytes(StandardCharsets.UTF_8));
@@ -57,6 +59,10 @@ public class Usuario {
             return null;
         }
     }
+
+    // Método principal para probar el hash
+    public static void main(String[] args) {
+        Usuario u = new Usuario("breackadm", "admin123");
+        System.out.println("Hash generado: " + u.hashPassword("admin123"));
+    }
 }
-
-
