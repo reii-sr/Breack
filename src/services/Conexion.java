@@ -5,10 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion{
-    private static final String URL = "jdbc:sqlserver://192.168.1.138:1433;databaseName=BreakPhone2_0";
+    private static final String URL = "jdbc:sqlserver://192.168.1.138:1433;databaseName=BreakPhone2_0;encrypt=true;trustServerCertificate=true";
     private static final String USUARIO = "sa";
     private static final String CONTRASENA = "@123PDR";
 
+    @SuppressWarnings("CallToPrintStackTrace")
     public static Connection obtenerConexion() {
         try {
             // Registrar el driver si es necesario (opcional desde JDBC 4.0)
