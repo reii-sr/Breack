@@ -24,4 +24,16 @@ public class Conexion{
         }
         return null;
     }
-}
+// Cerrar la conexión
+    @SuppressWarnings("CallToPrintStackTrace")
+    public static void cerrarConexion(Connection conn) {
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar la conexión.");
+                e.printStackTrace();
+            }
+        }
+    }
+    }
